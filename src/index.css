@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0f1115;
+  --bg2: #15171d;
+  --fg: #d1d0c5;
+  --caret: #e2b714;
+  --sub: #646669;
+  --error-extra: #a32a35;
+  --correct: #d1d0c5;
+  --wrong: #ca4754;
+  --card: #14161b;
+  --border: #23252c;
+}
+
+:root[data-theme='light'] {
+  --bg: #f5f3ef;
+  --bg2: #e8e6e1;
+  --fg: #2c2c2c;
+  --caret: #cfa000;
+  --sub: #a8a594;
+  --correct: #2c2c2c;
+  --card: #ffffff;
+  --border: #ddd9cf;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes score-pop {
+  0% {
+    transform: scale(1.18);
+    color: var(--caret);
+  }
+  100% {
+    transform: scale(1);
+    color: var(--fg);
+  }
+}
